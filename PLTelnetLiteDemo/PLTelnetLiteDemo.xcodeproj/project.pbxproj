@@ -1,0 +1,376 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CD5B0DF81B7B3CD4006970E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5B0DF71B7B3CD4006970E0 /* AppDelegate.swift */; };
+		CD5B0DFA1B7B3CD4006970E0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5B0DF91B7B3CD4006970E0 /* ViewController.swift */; };
+		CD5B0DFD1B7B3CD4006970E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD5B0DFB1B7B3CD4006970E0 /* Main.storyboard */; };
+		CD5B0DFF1B7B3CD4006970E0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD5B0DFE1B7B3CD4006970E0 /* Images.xcassets */; };
+		CD5B0E021B7B3CD4006970E0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD5B0E001B7B3CD4006970E0 /* LaunchScreen.xib */; };
+		CDEB89741B7B3F1B00F5CDAC /* libPLTelnetLite.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CDEB89711B7B3F0900F5CDAC /* libPLTelnetLite.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CDEB89701B7B3F0900F5CDAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CDEB896C1B7B3F0900F5CDAC /* PLTelnetLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = CD5B0DA11B7B3BC0006970E0;
+			remoteInfo = PLTelnetLite;
+		};
+		CDEB89721B7B3F0C00F5CDAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CDEB896C1B7B3F0900F5CDAC /* PLTelnetLite.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = CD5B0DA01B7B3BC0006970E0;
+			remoteInfo = PLTelnetLite;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CD5B0DF21B7B3CD4006970E0 /* PLTelnetLiteDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PLTelnetLiteDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD5B0DF61B7B3CD4006970E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD5B0DF71B7B3CD4006970E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CD5B0DF91B7B3CD4006970E0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CD5B0DFC1B7B3CD4006970E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CD5B0DFE1B7B3CD4006970E0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		CD5B0E011B7B3CD4006970E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		CDEB896C1B7B3F0900F5CDAC /* PLTelnetLite.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PLTelnetLite.xcodeproj; path = ../PLTelnetLite/PLTelnetLite.xcodeproj; sourceTree = "<group>"; };
+		CDEB89761B7B3FDA00F5CDAC /* PLTelnetLiteDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PLTelnetLiteDemo-Bridging-Header.h"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CD5B0DEF1B7B3CD4006970E0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDEB89741B7B3F1B00F5CDAC /* libPLTelnetLite.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CD5B0DE91B7B3CD4006970E0 = {
+			isa = PBXGroup;
+			children = (
+				CD5B0DF41B7B3CD4006970E0 /* PLTelnetLiteDemo */,
+				CDEB89751B7B3F6D00F5CDAC /* Frameworks */,
+				CD5B0DF31B7B3CD4006970E0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CD5B0DF31B7B3CD4006970E0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CD5B0DF21B7B3CD4006970E0 /* PLTelnetLiteDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CD5B0DF41B7B3CD4006970E0 /* PLTelnetLiteDemo */ = {
+			isa = PBXGroup;
+			children = (
+				CD5B0DF71B7B3CD4006970E0 /* AppDelegate.swift */,
+				CD5B0DF91B7B3CD4006970E0 /* ViewController.swift */,
+				CD5B0DFB1B7B3CD4006970E0 /* Main.storyboard */,
+				CD5B0DFE1B7B3CD4006970E0 /* Images.xcassets */,
+				CD5B0E001B7B3CD4006970E0 /* LaunchScreen.xib */,
+				CD5B0DF51B7B3CD4006970E0 /* Supporting Files */,
+			);
+			path = PLTelnetLiteDemo;
+			sourceTree = "<group>";
+		};
+		CD5B0DF51B7B3CD4006970E0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CDEB89761B7B3FDA00F5CDAC /* PLTelnetLiteDemo-Bridging-Header.h */,
+				CD5B0DF61B7B3CD4006970E0 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CDEB896D1B7B3F0900F5CDAC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CDEB89711B7B3F0900F5CDAC /* libPLTelnetLite.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CDEB89751B7B3F6D00F5CDAC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CDEB896C1B7B3F0900F5CDAC /* PLTelnetLite.xcodeproj */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CD5B0DF11B7B3CD4006970E0 /* PLTelnetLiteDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CD5B0E111B7B3CD4006970E0 /* Build configuration list for PBXNativeTarget "PLTelnetLiteDemo" */;
+			buildPhases = (
+				CD5B0DEE1B7B3CD4006970E0 /* Sources */,
+				CD5B0DEF1B7B3CD4006970E0 /* Frameworks */,
+				CD5B0DF01B7B3CD4006970E0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CDEB89731B7B3F0C00F5CDAC /* PBXTargetDependency */,
+			);
+			name = PLTelnetLiteDemo;
+			productName = PLTelnetLiteDemo;
+			productReference = CD5B0DF21B7B3CD4006970E0 /* PLTelnetLiteDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CD5B0DEA1B7B3CD4006970E0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = "Patrick Lin";
+				TargetAttributes = {
+					CD5B0DF11B7B3CD4006970E0 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+				};
+			};
+			buildConfigurationList = CD5B0DED1B7B3CD4006970E0 /* Build configuration list for PBXProject "PLTelnetLiteDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CD5B0DE91B7B3CD4006970E0;
+			productRefGroup = CD5B0DF31B7B3CD4006970E0 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = CDEB896D1B7B3F0900F5CDAC /* Products */;
+					ProjectRef = CDEB896C1B7B3F0900F5CDAC /* PLTelnetLite.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				CD5B0DF11B7B3CD4006970E0 /* PLTelnetLiteDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		CDEB89711B7B3F0900F5CDAC /* libPLTelnetLite.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libPLTelnetLite.a;
+			remoteRef = CDEB89701B7B3F0900F5CDAC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CD5B0DF01B7B3CD4006970E0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD5B0DFD1B7B3CD4006970E0 /* Main.storyboard in Resources */,
+				CD5B0E021B7B3CD4006970E0 /* LaunchScreen.xib in Resources */,
+				CD5B0DFF1B7B3CD4006970E0 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CD5B0DEE1B7B3CD4006970E0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD5B0DFA1B7B3CD4006970E0 /* ViewController.swift in Sources */,
+				CD5B0DF81B7B3CD4006970E0 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CDEB89731B7B3F0C00F5CDAC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = PLTelnetLite;
+			targetProxy = CDEB89721B7B3F0C00F5CDAC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CD5B0DFB1B7B3CD4006970E0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CD5B0DFC1B7B3CD4006970E0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CD5B0E001B7B3CD4006970E0 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CD5B0E011B7B3CD4006970E0 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CD5B0E0F1B7B3CD4006970E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CD5B0E101B7B3CD4006970E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CD5B0E121B7B3CD4006970E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = PLTelnetLiteDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-l",
+					CocoaAsyncSocket,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PLTelnetLiteDemo/PLTelnetLiteDemo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CD5B0E131B7B3CD4006970E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = PLTelnetLiteDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-l",
+					CocoaAsyncSocket,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PLTelnetLiteDemo/PLTelnetLiteDemo-Bridging-Header.h";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CD5B0DED1B7B3CD4006970E0 /* Build configuration list for PBXProject "PLTelnetLiteDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD5B0E0F1B7B3CD4006970E0 /* Debug */,
+				CD5B0E101B7B3CD4006970E0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CD5B0E111B7B3CD4006970E0 /* Build configuration list for PBXNativeTarget "PLTelnetLiteDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD5B0E121B7B3CD4006970E0 /* Debug */,
+				CD5B0E131B7B3CD4006970E0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CD5B0DEA1B7B3CD4006970E0 /* Project object */;
+}

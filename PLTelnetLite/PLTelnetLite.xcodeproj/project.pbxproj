@@ -1,0 +1,317 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		04D7FD92142F8124903DE2E7 /* libPods-PLTelnetLite.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C4CF629D40863D76F18FA1C2 /* libPods-PLTelnetLite.a */; };
+		CD5B0DA51B7B3BC0006970E0 /* PLTelnetLite.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CD5B0DA41B7B3BC0006970E0 /* PLTelnetLite.h */; };
+		CDEB897C1B7B406000F5CDAC /* PLTelnetClient.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEB897B1B7B406000F5CDAC /* PLTelnetClient.m */; };
+		CDEB897D1B7B423300F5CDAC /* PLTelnetClient.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CDEB897A1B7B406000F5CDAC /* PLTelnetClient.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CD5B0D9F1B7B3BC0006970E0 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				CDEB897D1B7B423300F5CDAC /* PLTelnetClient.h in CopyFiles */,
+				CD5B0DA51B7B3BC0006970E0 /* PLTelnetLite.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		63561C1551DFC34622652F8B /* Pods-PLTelnetLite.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PLTelnetLite.release.xcconfig"; path = "../Pods/Target Support Files/Pods-PLTelnetLite/Pods-PLTelnetLite.release.xcconfig"; sourceTree = "<group>"; };
+		C4CF629D40863D76F18FA1C2 /* libPods-PLTelnetLite.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PLTelnetLite.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD5B0DA11B7B3BC0006970E0 /* libPLTelnetLite.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPLTelnetLite.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD5B0DA41B7B3BC0006970E0 /* PLTelnetLite.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PLTelnetLite.h; sourceTree = "<group>"; };
+		CDEB897A1B7B406000F5CDAC /* PLTelnetClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLTelnetClient.h; sourceTree = "<group>"; };
+		CDEB897B1B7B406000F5CDAC /* PLTelnetClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLTelnetClient.m; sourceTree = "<group>"; };
+		FCF846DB1684C263332331F6 /* Pods-PLTelnetLite.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PLTelnetLite.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-PLTelnetLite/Pods-PLTelnetLite.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CD5B0D9E1B7B3BC0006970E0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04D7FD92142F8124903DE2E7 /* libPods-PLTelnetLite.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C58969D16C9E8CADFA772AB6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FCF846DB1684C263332331F6 /* Pods-PLTelnetLite.debug.xcconfig */,
+				63561C1551DFC34622652F8B /* Pods-PLTelnetLite.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C87D85448BFF50C64EB17040 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C4CF629D40863D76F18FA1C2 /* libPods-PLTelnetLite.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CD5B0D981B7B3BC0006970E0 = {
+			isa = PBXGroup;
+			children = (
+				CD5B0DA31B7B3BC0006970E0 /* PLTelnetLite */,
+				CD5B0DA21B7B3BC0006970E0 /* Products */,
+				C58969D16C9E8CADFA772AB6 /* Pods */,
+				C87D85448BFF50C64EB17040 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		CD5B0DA21B7B3BC0006970E0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CD5B0DA11B7B3BC0006970E0 /* libPLTelnetLite.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CD5B0DA31B7B3BC0006970E0 /* PLTelnetLite */ = {
+			isa = PBXGroup;
+			children = (
+				CD5B0DA41B7B3BC0006970E0 /* PLTelnetLite.h */,
+				CDEB897A1B7B406000F5CDAC /* PLTelnetClient.h */,
+				CDEB897B1B7B406000F5CDAC /* PLTelnetClient.m */,
+			);
+			path = PLTelnetLite;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CD5B0DA01B7B3BC0006970E0 /* PLTelnetLite */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CD5B0DB51B7B3BC0006970E0 /* Build configuration list for PBXNativeTarget "PLTelnetLite" */;
+			buildPhases = (
+				E008A6E781E2DA422176F420 /* Check Pods Manifest.lock */,
+				CD5B0D9D1B7B3BC0006970E0 /* Sources */,
+				CD5B0D9E1B7B3BC0006970E0 /* Frameworks */,
+				CD5B0D9F1B7B3BC0006970E0 /* CopyFiles */,
+				63B4276FF494206556E442CF /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PLTelnetLite;
+			productName = PLTelnetLite;
+			productReference = CD5B0DA11B7B3BC0006970E0 /* libPLTelnetLite.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CD5B0D991B7B3BC0006970E0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = "Patrick Lin";
+				TargetAttributes = {
+					CD5B0DA01B7B3BC0006970E0 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+				};
+			};
+			buildConfigurationList = CD5B0D9C1B7B3BC0006970E0 /* Build configuration list for PBXProject "PLTelnetLite" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = CD5B0D981B7B3BC0006970E0;
+			productRefGroup = CD5B0DA21B7B3BC0006970E0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CD5B0DA01B7B3BC0006970E0 /* PLTelnetLite */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		63B4276FF494206556E442CF /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-PLTelnetLite/Pods-PLTelnetLite-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E008A6E781E2DA422176F420 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CD5B0D9D1B7B3BC0006970E0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDEB897C1B7B406000F5CDAC /* PLTelnetClient.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		CD5B0DB31B7B3BC0006970E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		CD5B0DB41B7B3BC0006970E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CD5B0DB61B7B3BC0006970E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FCF846DB1684C263332331F6 /* Pods-PLTelnetLite.debug.xcconfig */;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		CD5B0DB71B7B3BC0006970E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 63561C1551DFC34622652F8B /* Pods-PLTelnetLite.release.xcconfig */;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CD5B0D9C1B7B3BC0006970E0 /* Build configuration list for PBXProject "PLTelnetLite" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD5B0DB31B7B3BC0006970E0 /* Debug */,
+				CD5B0DB41B7B3BC0006970E0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CD5B0DB51B7B3BC0006970E0 /* Build configuration list for PBXNativeTarget "PLTelnetLite" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD5B0DB61B7B3BC0006970E0 /* Debug */,
+				CD5B0DB71B7B3BC0006970E0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CD5B0D991B7B3BC0006970E0 /* Project object */;
+}
