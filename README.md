@@ -1,0 +1,2 @@
+# PLTelnetLite
+Simply Telnet Client
