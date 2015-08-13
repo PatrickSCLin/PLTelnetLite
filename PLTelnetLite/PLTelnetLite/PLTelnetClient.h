@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "PLTelnetIACHandlerImpl.h"
+#import "PLTelnetCSIHandlerImpl.h"
 
 @class PLTelnetClient;
 
@@ -28,7 +30,17 @@
 
 @interface PLTelnetClient : NSObject
 
+@property(assign, nonatomic)NSTimeInterval timeout;
+
 @property(atomic, weak, readwrite)id<PLTelnetClientDelegate> delegate;
+
+@property(strong, nonatomic)id<PLTelnetIACHandlerImpl> IACHandler;
+
+@property(strong, nonatomic)id<PLTelnetCSIHandlerImpl> CSIHandler;
+
+@property(strong, nonatomic)NSArray* expectedStringEncodings;
+
+@property(strong, nonatomic)PLTelnetScreenObject* screen;
 
 - (BOOL)connectToHost:(NSString *)host onPort:(NSUInteger)port;
 

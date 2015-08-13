@@ -13,6 +13,7 @@
 		CD5B0DFF1B7B3CD4006970E0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD5B0DFE1B7B3CD4006970E0 /* Images.xcassets */; };
 		CD5B0E021B7B3CD4006970E0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD5B0E001B7B3CD4006970E0 /* LaunchScreen.xib */; };
 		CDEB89741B7B3F1B00F5CDAC /* libPLTelnetLite.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CDEB89711B7B3F0900F5CDAC /* libPLTelnetLite.a */; };
+		CDEB899E1B7CA90100F5CDAC /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CDEB899D1B7CA90100F5CDAC /* libicucore.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		CD5B0E011B7B3CD4006970E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		CDEB896C1B7B3F0900F5CDAC /* PLTelnetLite.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PLTelnetLite.xcodeproj; path = ../PLTelnetLite/PLTelnetLite.xcodeproj; sourceTree = "<group>"; };
 		CDEB89761B7B3FDA00F5CDAC /* PLTelnetLiteDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PLTelnetLiteDemo-Bridging-Header.h"; sourceTree = "<group>"; };
+		CDEB899D1B7CA90100F5CDAC /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDEB899E1B7CA90100F5CDAC /* libicucore.dylib in Frameworks */,
 				CDEB89741B7B3F1B00F5CDAC /* libPLTelnetLite.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -106,6 +109,7 @@
 		CDEB89751B7B3F6D00F5CDAC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CDEB899D1B7CA90100F5CDAC /* libicucore.dylib */,
 				CDEB896C1B7B3F0900F5CDAC /* PLTelnetLite.xcodeproj */,
 			);
 			name = Frameworks;

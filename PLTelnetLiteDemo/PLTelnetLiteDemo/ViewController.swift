@@ -16,7 +16,7 @@ class ViewController: UIViewController, PLTelnetClientDelegate {
     
     func telnetClient(client: PLTelnetClient!, didConnectToHost host: String!, onPort port: UInt) {
         
-        println("didConnectToHost: \(host):\(port)");
+        println("didConnectToHost: \(host!):\(port)");
         
     }
     
@@ -30,6 +30,8 @@ class ViewController: UIViewController, PLTelnetClientDelegate {
         
         println("didReceiveData: data length: \(data.length)");
         
+        client.screen.printScreen();
+        
     }
     
     // MARK: Init Methods
@@ -40,9 +42,34 @@ class ViewController: UIViewController, PLTelnetClientDelegate {
         
         self.client = PLTelnetClient(delegate: self);
         
+        self.client.IACHandler = PLTelnetIACHandler();
+        
+        self.client.CSIHandler = PLTelnetVT100Handler();
+
+        self.client.expectedStringEncodings = [NSNumber(unsignedLong: String.stringEncoding(CFStringEncoding(CFStringEncodings.Big5.rawValue)))];
+        
         self.client.connectToHost("ptt.cc", onPort: 23);
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), {
+           
+            self.client.disconnect();
+            
+            self.client = nil;
+            
+        });
         
     }
 
 }
 
+extension String {
+    
+    static func stringEncoding(cStringEncoding: CFStringEncoding) -> NSStringEncoding {
+        
+        let stringEncoding = CFStringConvertEncodingToNSStringEncoding(cStringEncoding);
+        
+        return stringEncoding;
+        
+    }
+    
+}

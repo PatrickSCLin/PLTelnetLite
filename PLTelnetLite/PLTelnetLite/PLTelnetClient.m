@@ -7,35 +7,28 @@
 //
 
 #import "PLTelnetClient.h"
-#import <CocoaAsyncSocket/GCDAsyncSocket.h>
+#import <CocoaAsyncSocket/AsyncSocket.h>
+#import "PLTelnetScreenObject.h"
 
-static const NSTimeInterval     PLTelnetLite_Timeout        = 3;
-static const NSInteger          PLTelnetLite_Retry_Count    = 6;
-static const NSTimeInterval     PLTelnetLite_Retry_Delay    = 0.5;
+static const NSTimeInterval     PLTelnetLite_Timeout        = 5;
+static const NSTimeInterval     PLTelnetLite_Retry_Delay    = 0.2;
+static const NSInteger          PLTelnetLite_Retry_Count    = 3;
 
-@interface GCDAsyncSocket(PLTelnetClient)
-
-
-
-@end
-
-@implementation GCDAsyncSocket(PLTelnetClient)
-
-- (void)test {
-    self->socketFDBytesAvailable
-}
+@interface AsyncSocket(PLTelnetClient)
 
 @end
 
-@interface PLTelnetClient() <GCDAsyncSocketDelegate>
+@implementation AsyncSocket(PLTelnetClient)
+
+@end
+
+@interface PLTelnetClient() <AsyncSocketDelegate>
 {
     long                _readSequence;
     
     long                _writeSequence;
     
-    dispatch_queue_t    _delegate_queue;
-    
-    GCDAsyncSocket*     _socket;
+    AsyncSocket*        _socket;
     
     NSMutableData*      _readData;
 }
@@ -50,7 +43,7 @@ static const NSTimeInterval     PLTelnetLite_Retry_Delay    = 0.5;
 
 #pragma mark - Socket Delegate Methods
 
-- (void)socket:(GCDAsyncSocket *)sock didConnectToHost:(NSString *)host port:(uint16_t)port
+- (void)onSocket:(AsyncSocket *)sock didConnectToHost:(NSString *)host port:(UInt16)port
 {
     dispatch_async(dispatch_get_main_queue(), ^{
         
@@ -62,14 +55,14 @@ static const NSTimeInterval     PLTelnetLite_Retry_Delay    = 0.5;
                 
             }
             
-            [sock readDataWithTimeout:PLTelnetLite_Timeout buffer:self.readData bufferOffset:self.readData.length tag:_readSequence++];
+            [sock readDataWithTimeout:self.timeout buffer:self.readData bufferOffset:self.readData.length tag:_readSequence++];
         
         }
         
     });
 }
 
-- (void)socketDidDisconnect:(GCDAsyncSocket *)sock withError:(NSError *)err
+- (void)onSocket:(AsyncSocket *)sock willDisconnectWithError:(NSError *)err
 {
     dispatch_async(dispatch_get_main_queue(), ^{
         
@@ -86,11 +79,15 @@ static const NSTimeInterval     PLTelnetLite_Retry_Delay    = 0.5;
     });
 }
 
-- (void)socket:(GCDAsyncSocket *)sock didReadData:(NSData *)data withTag:(long)tag
+- (void)onSocket:(AsyncSocket *)sock didReadData:(NSData *)data withTag:(long)tag
 {
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    @autoreleasepool {
         
-        NSLog(@"didReadData data length: %ld, tag: %ld", data.length, tag);
+        [self parse:data];
+        
+    }
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(PLTelnetLite_Retry_Delay * 1000 * NSEC_PER_MSEC)), dispatch_get_main_queue(), ^{
         
         NSInteger counts = 0;
         
@@ -100,19 +97,13 @@ static const NSTimeInterval     PLTelnetLite_Retry_Delay    = 0.5;
             
             dispatch_semaphore_t read_task = dispatch_semaphore_create(0);
             
-            [sock performBlock:^{
+            if (CFReadStreamHasBytesAvailable(sock.getCFReadStream)) {
                 
-                if (CFReadStreamHasBytesAvailable(sock.readStream)) {
-                    
-                    hasBytesAvailable = YES;
-                    
-                    dispatch_semaphore_signal(read_task);
-                    
-                }
+                hasBytesAvailable = YES;
                 
-                NSLog(@"has data: %@", (hasBytesAvailable) ? @"YES" : @"NO");
+                dispatch_semaphore_signal(read_task);
                 
-            }];
+            }
             
             dispatch_semaphore_wait(read_task, dispatch_time(DISPATCH_TIME_NOW, PLTelnetLite_Retry_Delay * 1000 * NSEC_PER_MSEC));
             
@@ -121,7 +112,7 @@ static const NSTimeInterval     PLTelnetLite_Retry_Delay    = 0.5;
         
         if (hasBytesAvailable == YES) {
             
-            [sock readDataWithTimeout:PLTelnetLite_Timeout buffer:self.readData bufferOffset:self.readData.length tag:tag];
+            [sock readDataWithTimeout:self.timeout buffer:self.readData bufferOffset:self.readData.length tag:tag];
             
             return;
             
@@ -135,6 +126,8 @@ static const NSTimeInterval     PLTelnetLite_Retry_Delay    = 0.5;
                     
                     [_delegate telnetClient:self didReceiveData:self.readData];
                     
+                    [self.readData setLength:0];
+                    
                 }
                 
             }
@@ -142,6 +135,11 @@ static const NSTimeInterval     PLTelnetLite_Retry_Delay    = 0.5;
         });
         
     });
+}
+
+- (void)onSocket:(AsyncSocket *)sock didWriteDataWithTag:(long)tag
+{
+    [_socket readDataWithTimeout:self.timeout buffer:self.readData bufferOffset:self.readData.length tag:_readSequence++];
 }
 
 #pragma mark - Internal Methods
@@ -155,6 +153,113 @@ static const NSTimeInterval     PLTelnetLite_Retry_Delay    = 0.5;
     }
     
     return _readData;
+}
+
+- (void)parse:(NSData *)parseData
+{
+    NSMutableData* temp_readData = [NSMutableData dataWithBytes:parseData.bytes length:parseData.length];
+    
+    NSData* buffer = [NSData dataWithBytes:parseData.bytes length:parseData.length];
+    
+    [buffer enumerateByteRangesUsingBlock:^(const void *bytes, NSRange byteRange, BOOL *stop) {
+        
+        __block size_t start = 0;
+        
+        for (__block size_t i = 0; i < byteRange.length; i++) {
+            
+            @autoreleasepool {
+            
+                uint8_t byte = ((uint8_t *)bytes)[i];
+                
+                // IAC Handler
+                if (_IACHandler != nil && [_IACHandler isIACCode:byte]) {
+                    
+                    void* offsetBytes = (void *)bytes + i;
+                    
+                    NSUInteger offsetLength = byteRange.length - i;
+                    
+                    NSData* data = [NSData dataWithBytesNoCopy:offsetBytes length:offsetLength freeWhenDone:NO];
+                    
+                    [_IACHandler parse:data withBlock:^(NSData* IAC) {
+                        
+                        if (IAC != nil && IAC.length > 0) {
+                            
+                            [temp_readData replaceBytesInRange:NSMakeRange(0, (i - start) + IAC.length) withBytes:NULL length:0];
+                            
+                            if (_delegate != nil && [_delegate respondsToSelector:@selector(telnetClient:didReceiveIAC:)]) {
+                                
+                                [_delegate telnetClient:self didReceiveIAC:IAC];
+                                
+                            }
+                            
+                            i += (IAC.length - 1);
+                            
+                            start = i + 1;
+                            
+                        }
+                        
+                    }];
+                    
+                    data = nil;
+                    
+                }
+                
+                // CSI Handler
+                else if (_CSIHandler != nil && [_CSIHandler isCSICode:byte]) {
+                    
+                    void* offsetBytes = (void *)bytes + i;
+                    
+                    NSUInteger offsetLength = byteRange.length - i;
+                    
+                    NSData* data = [NSData dataWithBytesNoCopy:offsetBytes length:offsetLength freeWhenDone:NO];
+                    
+                    [_CSIHandler parse:data withBlock:^(NSData *CSI, NSArray *params, NSString *mode, NSData *value) {
+                        
+                        if (CSI != nil && mode != nil) {
+                            
+                            [temp_readData replaceBytesInRange:NSMakeRange(0, (i - start) + CSI.length) withBytes:NULL length:0];
+                            
+                            [_CSIHandler screen:_screen process:CSI withParams:params withMode:mode withValue:value];
+                            
+                            if (_delegate != nil && [_delegate respondsToSelector:@selector(telnetClient:didReceiveCSI:withParams:withMode:withValue:)]) {
+                                
+                                [_delegate telnetClient:self didReceiveCSI:CSI withParams:params withMode:mode withValue:value];
+                                
+                            }
+                            
+                            i += (CSI.length - 1);
+                            
+                            start = i + 1;
+                            
+                        }
+                        
+                    }];
+                    
+                    data = nil;
+                    
+                }
+                
+            }
+            
+        }
+        
+    }];
+    
+    [temp_readData setLength:0];
+    
+    temp_readData = nil;
+    
+    buffer = nil;
+}
+
+- (void)setExpectedStringEncodings:(NSArray *)expectedStringEncodings
+{
+    _screen.expectedStringEncodings = expectedStringEncodings;
+}
+
+- (NSArray *)expectedStringEncodings
+{
+    return _screen.expectedStringEncodings;
 }
 
 #pragma mark - Public Methods
@@ -171,7 +276,7 @@ static const NSTimeInterval     PLTelnetLite_Retry_Delay    = 0.5;
 
 - (void)sendData:(NSData *)data
 {
-    
+    [_socket writeData:data withTimeout:self.timeout tag:_writeSequence++];
 }
 
 #pragma mark - Init Methods
@@ -185,11 +290,13 @@ static const NSTimeInterval     PLTelnetLite_Retry_Delay    = 0.5;
 {
     if (self = [super init]) {
         
+        _timeout = PLTelnetLite_Timeout;
+        
         _delegate = delegate;
         
-        _delegate_queue = dispatch_queue_create("com.patricksclin.PLTelnetLite.delegate", DISPATCH_QUEUE_SERIAL);
+        _socket = [[AsyncSocket alloc] initWithDelegate:self];
         
-        _socket = [[GCDAsyncSocket alloc] initWithDelegate:self delegateQueue:_delegate_queue];
+        _screen = [[PLTelnetScreenObject alloc] init];
         
     }
     
