@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		04D7FD92142F8124903DE2E7 /* libPods-PLTelnetLite.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C4CF629D40863D76F18FA1C2 /* libPods-PLTelnetLite.a */; };
 		CD5B0DA51B7B3BC0006970E0 /* PLTelnetLite.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CD5B0DA41B7B3BC0006970E0 /* PLTelnetLite.h */; };
+		CD7085D21B7DCB1400703551 /* PLTelnetEncodingUtils.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CD80955F1B7DBBDD00B5080C /* PLTelnetEncodingUtils.h */; };
+		CD8095611B7DBBDD00B5080C /* PLTelnetEncodingUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = CD8095601B7DBBDD00B5080C /* PLTelnetEncodingUtils.m */; settings = {COMPILER_FLAGS = "-w"; }; };
 		CDEB897C1B7B406000F5CDAC /* PLTelnetClient.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEB897B1B7B406000F5CDAC /* PLTelnetClient.m */; };
 		CDEB897D1B7B423300F5CDAC /* PLTelnetClient.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CDEB897A1B7B406000F5CDAC /* PLTelnetClient.h */; };
 		CDEB89951B7C9EA700F5CDAC /* PLTelnetIACHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEB898F1B7C9EA700F5CDAC /* PLTelnetIACHandler.m */; };
@@ -28,6 +30,7 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				CD7085D21B7DCB1400703551 /* PLTelnetEncodingUtils.h in CopyFiles */,
 				CDEB89981B7CA82700F5CDAC /* PLTelnetCSIHandlerImpl.h in CopyFiles */,
 				CDEB89991B7CA82700F5CDAC /* PLTelnetIACHandler.h in CopyFiles */,
 				CDEB899A1B7CA82700F5CDAC /* PLTelnetIACHandlerImpl.h in CopyFiles */,
@@ -45,6 +48,8 @@
 		C4CF629D40863D76F18FA1C2 /* libPods-PLTelnetLite.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PLTelnetLite.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD5B0DA11B7B3BC0006970E0 /* libPLTelnetLite.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPLTelnetLite.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD5B0DA41B7B3BC0006970E0 /* PLTelnetLite.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PLTelnetLite.h; sourceTree = "<group>"; };
+		CD80955F1B7DBBDD00B5080C /* PLTelnetEncodingUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLTelnetEncodingUtils.h; sourceTree = "<group>"; };
+		CD8095601B7DBBDD00B5080C /* PLTelnetEncodingUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLTelnetEncodingUtils.m; sourceTree = "<group>"; };
 		CDEB897A1B7B406000F5CDAC /* PLTelnetClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLTelnetClient.h; sourceTree = "<group>"; };
 		CDEB897B1B7B406000F5CDAC /* PLTelnetClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLTelnetClient.m; sourceTree = "<group>"; };
 		CDEB898D1B7C9EA700F5CDAC /* PLTelnetCSIHandlerImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLTelnetCSIHandlerImpl.h; sourceTree = "<group>"; };
@@ -119,6 +124,8 @@
 				CD5B0DA41B7B3BC0006970E0 /* PLTelnetLite.h */,
 				CDEB897A1B7B406000F5CDAC /* PLTelnetClient.h */,
 				CDEB897B1B7B406000F5CDAC /* PLTelnetClient.m */,
+				CD80955F1B7DBBDD00B5080C /* PLTelnetEncodingUtils.h */,
+				CD8095601B7DBBDD00B5080C /* PLTelnetEncodingUtils.m */,
 			);
 			path = PLTelnetLite;
 			sourceTree = "<group>";
@@ -214,6 +221,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD8095611B7DBBDD00B5080C /* PLTelnetEncodingUtils.m in Sources */,
 				CDEB89951B7C9EA700F5CDAC /* PLTelnetIACHandler.m in Sources */,
 				CDEB897C1B7B406000F5CDAC /* PLTelnetClient.m in Sources */,
 				CDEB89971B7C9EA700F5CDAC /* PLTelnetVT100Handler.m in Sources */,

@@ -9,3 +9,4 @@
 #import "PLTelnetClient.h"
 #import "PLTelnetIACHandler.h"
 #import "PLTelnetVT100Handler.h"
+#import "PLTelnetEncodingUtils.h"

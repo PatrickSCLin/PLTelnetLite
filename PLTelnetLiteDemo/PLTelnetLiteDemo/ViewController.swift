@@ -41,22 +41,10 @@ class ViewController: UIViewController, PLTelnetClientDelegate {
         super.viewDidLoad();
         
         self.client = PLTelnetClient(delegate: self);
-        
-        self.client.IACHandler = PLTelnetIACHandler();
-        
-        self.client.CSIHandler = PLTelnetVT100Handler();
 
         self.client.expectedStringEncodings = [NSNumber(unsignedLong: String.stringEncoding(CFStringEncoding(CFStringEncodings.Big5.rawValue)))];
         
         self.client.connectToHost("ptt.cc", onPort: 23);
-        
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), {
-           
-            self.client.disconnect();
-            
-            self.client = nil;
-            
-        });
         
     }
 

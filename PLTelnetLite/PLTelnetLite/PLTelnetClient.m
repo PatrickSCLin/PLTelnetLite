@@ -9,6 +9,8 @@
 #import "PLTelnetClient.h"
 #import <CocoaAsyncSocket/AsyncSocket.h>
 #import "PLTelnetScreenObject.h"
+#import "PLTelnetIACHandler.h"
+#import "PLTelnetVT100Handler.h"
 
 static const NSTimeInterval     PLTelnetLite_Timeout        = 5;
 static const NSTimeInterval     PLTelnetLite_Retry_Delay    = 0.2;
@@ -290,9 +292,13 @@ static const NSInteger          PLTelnetLite_Retry_Count    = 3;
 {
     if (self = [super init]) {
         
+        _delegate = delegate;
+        
         _timeout = PLTelnetLite_Timeout;
         
-        _delegate = delegate;
+        _IACHandler = [[PLTelnetIACHandler alloc] init];
+        
+        _CSIHandler = [[PLTelnetVT100Handler alloc] init];
         
         _socket = [[AsyncSocket alloc] initWithDelegate:self];
         
